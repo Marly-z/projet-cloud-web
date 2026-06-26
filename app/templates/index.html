@@ -1,20 +1,40 @@
-<!doctype html> 
-<html lang="fr"><head><meta charset="utf-8"> 
-  <title>Catalogue d'ordinateurs</title></head> 
-<body> 
-  <h1>Catalogue d'ordinateurs</h1> 
-  <table border=1 cellpadding=6> 
-    <tr><th>Marque</th><th>Modele</th><th>OS</th><th>Prix</th></tr> 
-    {% for o in ordinateurs %} 
-    <tr><td>{{ o.marque }}</td><td>{{ o.modele }}</td> 
-        <td>{{ o.os }}</td><td>{{ o.prix }}</td></tr> 
-    {% endfor %} 
-  </table> 
-  <form method="post" action="/ajouter"> 
-    <input name="marque" placeholder="Marque" required> 
-    <input name="modele" placeholder="Modele" required> 
-    <input name="os" placeholder="OS" required> 
-    <input name="prix" type="number" placeholder="Prix" required> 
-    <button>Ajouter</button> 
-  </form> 
-</body></html>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <meta charset="utf-8">
+      <title>Catalogue d'ordinateurs</title>
+</head>
+ 
+<body>
+ 
+      <h1>Catalogue d'ordinateurs</h1>
+ 
+      <table border="1" cellpadding="6">
+         <tr>
+            <th>Marque</th>
+            <th>Modele</th>
+            <th>OS</th>
+            <th>Prix</th>
+         </tr>
+ 
+         {% for o in ordinateurs %}
+        <tr>
+           <td>{{ o.marque }}</td>
+           <td>{{ o.modele }}</td>
+           <td>{{ o.os }}</td>
+           <td>{{ o.prix }}</td>
+        </tr>
+         {% endfor %}
+     </table>
+ 
+     <!-- FORMULAIRE CORRECT -->
+     <form method="post" action="/ajouter">
+        <input name="marque" placeholder="Marque" required>
+        <input name="modele" placeholder="Modele" required>
+        <input name="os" placeholder="OS" required>
+        <input name="prix" type="number" placeholder="Prix" required>
+        <button type="submit">Ajouter</button>
+    </form>
+     
+  </body>
+  </html>
